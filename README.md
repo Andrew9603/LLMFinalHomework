@@ -28,7 +28,7 @@ traffic-simulation-code-generator/
 │   ├── call_ollama_models.py   
 │   └── clean_database.py         
 │
-
+│── results/ 
 │
 ├── data/                     
 │   ├── knowledge/            
@@ -204,6 +204,7 @@ python webui/app.py
 - 项目维护者：张勇强 、宋金源、闫本旭
 
 - 技术咨询：3390847466@qq.com
+
 
 
 
