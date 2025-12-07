@@ -71,7 +71,7 @@ Ollama 用于轻量化部署 CodeGeeX4 和 BGE-M3 模型。
 [cite_start]sudo systemctl status ollama # 检查状态 [cite: 16]
 
 
-```bash
+```
 
 traffic-simulation-code-generator/
 ├── docs/                # 项目文档（含API说明、知识库构建指南）
@@ -166,5 +166,6 @@ traffic-simulation-code-generator/
 - 项目维护者：张勇强 、宋金源、闫本旭
 
 - 技术咨询：3390847466@qq.com
+
 
 
