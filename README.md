@@ -38,7 +38,11 @@ traffic-simulation-code-generator/
 │   ├── security_mechanism.py      
 │   └── security_config.py   
 │                    
-├── requirements.txt        
+├── requirements.txt
+│
+│── results/
+│   └── run.sh
+│
 └── README.md               
 
 ```
@@ -204,6 +208,7 @@ python webui/app.py
 - 项目维护者：张勇强 、宋金源、闫本旭
 
 - 技术咨询：3390847466@qq.com
+
 
 
 
