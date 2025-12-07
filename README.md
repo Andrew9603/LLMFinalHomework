@@ -22,28 +22,24 @@
 ```
 ```bash
 traffic-simulation-code-generator/
-├── docs/                     # Project documents (API, knowledge base guide)
 │
-├── service/                  # Core backend modules
-│   ├── knowledge_base.py     # Knowledge base loader & retriever
-│   ├── code_generator.py     # RAG code generation engine
-│   └── security.py           # Auth & permission system
+├── src/                  
+│   ├── bge_m3_embedding.py  
+│   ├── call_ollama_models.py   
+│   └── clean_database.py         
 │
-├── webui/                    # Web UI module
-│   ├── app.py                # Frontend server entry
-│   └── static/               # Static resources (CSS/JS)
+
 │
-├── data/                     # Data directory
-│   ├── knowledge/            # Knowledge base raw & structured files
-│   └── test_cases/           # Example test cases
+├── data/                     
+│   ├── knowledge/            
+│   └── test_cases/          
 │
-├── config/                   # Configuration
-│   ├── model_config.py       # Model settings
-│   └── security_config.py    # Security settings
-│
-├── .env                      # Environment variables (excluded from Git)
-├── requirements.txt          # Dependencies
-└── README.md                 # Project documentation
+├── security/                   
+│   ├── model_config.py      
+│   └── security_config.py   
+│                    
+├── requirements.txt        
+└── README.md               
 
 ```
 
@@ -208,6 +204,7 @@ python webui/app.py
 - 项目维护者：张勇强 、宋金源、闫本旭
 
 - 技术咨询：3390847466@qq.com
+
 
 
 
