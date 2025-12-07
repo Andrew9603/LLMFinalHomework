@@ -105,29 +105,37 @@ Ollama 用于轻量化部署 CodeGeeX4 和 BGE-M3 模型。
 
 
 ```
+#### 2. 配置环境变量
 
-traffic-simulation-code-generator/
-├── docs/                # 项目文档（含API说明、知识库构建指南）
-├── service/             # 核心服务模块
-│   ├── knowledge_base.py # 知识库管理（数据加载、检索接口）
-│   ├── code_generator.py # 代码生成引擎（RAG增强、模型调用）
-│   └── security.py      # 安全机制（权限控制、密钥管理）
-├── webui/               # Web界面模块
-│   ├── app.py           # 前端服务入口
-│   └── static/          # 静态资源（CSS/JS）
-├── data/                # 数据目录
-│   ├── knowledge/       # 知识库原始数据与结构化文件
-│   └── test_cases/      # 测试用例（路网描述、信号控制等）
-├── config/              # 配置文件
-│   ├── model_config.py  # 模型参数配置
-│   └── security_config.py # 安全配置
-├── .env                 # 环境变量配置（不提交Git）
-├── requirements.txt     # 依赖清单
-└── README.md            # 项目说明文档
-
+```bash
+# 阿里云DSW配置
+DSW_HOST=your-dsw-host
+DSW_PORT=your-dsw-port
+# SSH密钥认证
+SSH_PRIVATE_KEY_PATH=./ssh/id_rsa
+# RBAC权限控制
+ADMIN_USER=admin
+ADMIN_PASSWORD=your-secure-password
+# Ollama配置
+OLLAMA_MODEL=codegeex4:9b
+OLLAMA_HOST=http://localhost:11434
+```
+#### 3. 启动服务
+```bash
+# 启动RAG知识库服务
+python service/knowledge_base.py
+# 启动代码生成服务
+python service/code_generator.py
+# 启动WebUI（默认端口：8080）
+python webui/app.py
+```
 
 
 ## 核心功能演示 🎬
+前端UI
+<img width="1611" height="813" alt="style" src="https://github.com/user-attachments/assets/a5084701-aa19-41c1-957b-4577f5428909" />
+
+
 示例 ：十字交叉口仿真代码生成
 
 输入："生成十字交叉口路网，东西向 3 车道，南北向 2 车道，信号周期 60 秒，交通流量 800pcu/h"
@@ -139,12 +147,13 @@ traffic-simulation-code-generator/
 - 路线文件（routes.xml）：定义车辆类型、行驶路线、发车频率
 
 - 信号控制文件（tls.xml）：定义信号相位、绿灯时长、周期参数
+<img width="1839" height="919" alt="sumo_simulation png" src="https://github.com/user-attachments/assets/f37398ef-7aed-4f80-9a52-f98d93b2d5c2" />
 
 
 
 ## 开发与贡献 🤝
 
-###开发指南
+### 开发指南
 
 1. 请基于 dev 分支创建 feature 分支进行开发
 
@@ -154,7 +163,7 @@ traffic-simulation-code-generator/
 
 4. 提交 PR 前请运行 pytest 确保测试通过
 
-###知识库扩展
+### 知识库扩展
 
 如需扩展知识库覆盖范围，可参考 docs/knowledge_base_guide.md，按照以下流程操作：
 
@@ -166,7 +175,7 @@ traffic-simulation-code-generator/
 
 4. 执行 python tests/test_retrieval.py 验证检索精度
 
-###贡献流程
+### 贡献流程
 
 1. Fork 本仓库
 
@@ -180,17 +189,17 @@ traffic-simulation-code-generator/
 
 ## 未来规划 🛣️
 
-[] 扩展知识库覆盖范围（新增智能交通、车路协同等场景知识）
+- 扩展知识库覆盖范围（新增智能交通、车路协同等场景知识）
 
-[] 优化复杂场景代码生成逻辑（支持多交叉口协同控制、动态交通流）
+- 优化复杂场景代码生成逻辑（支持多交叉口协同控制、动态交通流）
 
-[] 强化仿真结果可视化（新增数据统计图表、拥堵热点分析）
+- 强化仿真结果可视化（新增数据统计图表、拥堵热点分析）
 
-[] 支持多语言代码生成（适配 VISSIM、TransModeler 等其他仿真工具）
+- 支持多语言代码生成（适配 VISSIM、TransModeler 等其他仿真工具）
 
-[] 提供 Docker 容器化部署方案，简化环境配置
+- 提供 Docker 容器化部署方案，简化环境配置
 
-##许可证 📜
+## 许可证 📜
 
 本项目基于 [MIT 许可证](LICENSE) 开源，允许商业使用、修改、分发，需保留原作者版权声明。
 
@@ -199,6 +208,7 @@ traffic-simulation-code-generator/
 - 项目维护者：张勇强 、宋金源、闫本旭
 
 - 技术咨询：3390847466@qq.com
+
 
 
 
