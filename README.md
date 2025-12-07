@@ -19,23 +19,30 @@
                   │                │
             交通知识库          安全部署层
 traffic-simulation-code-generator/
-├── docs/                # 项目文档（含API说明、知识库构建指南）
-├── service/             # 核心服务模块
-│   ├── knowledge_base.py # 知识库管理（数据加载、检索接口）
-│   ├── code_generator.py # 代码生成引擎（RAG增强、模型调用）
-│   └── security.py      # 安全机制（权限控制、密钥管理）
-├── webui/               # Web界面模块
-│   ├── app.py           # 前端服务入口
-│   └── static/          # 静态资源（CSS/JS）
-├── data/                # 数据目录
-│   ├── knowledge/       # 知识库原始数据与结构化文件
-│   └── test_cases/      # 测试用例（路网描述、信号控制等）
-├── config/              # 配置文件
-│   ├── model_config.py  # 模型参数配置
-│   └── security_config.py # 安全配置
-├── .env                 # 环境变量配置（不提交Git）
-├── requirements.txt     # 依赖清单
-└── README.md            # 项目说明文档
+├── docs/                     # 项目文档（含 API 说明、知识库构建指南）
+│
+├── service/                 # 核心服务模块
+│   ├── knowledge_base.py    # 知识库管理（数据加载、检索接口）
+│   ├── code_generator.py    # 代码生成引擎（RAG 增强、模型调用）
+│   └── security.py          # 安全机制（权限控制、密钥管理）
+│
+├── webui/                   # Web 界面模块
+│   ├── app.py               # 前端服务入口（Flask/FastAPI）
+│   └── static/              # 静态资源（HTML/CSS/JS）
+│
+├── data/                    # 数据目录
+│   ├── knowledge/           # 知识库原始数据与结构化文件
+│   └── test_cases/          # 测试示例（路网描述、信号控制等）
+│
+├── config/                  # 配置文件
+│   ├── model_config.py      # 模型参数配置
+│   └── security_config.py   # 安全配置
+│
+├── .env                     # 环境变量配置（不提交到 Git）
+├── requirements.txt         # 依赖清单
+└── README.md                # 项目说明文档
+
+
 
 ### 核心技术栈
 
@@ -166,6 +173,7 @@ traffic-simulation-code-generator/
 - 项目维护者：张勇强 、宋金源、闫本旭
 
 - 技术咨询：3390847466@qq.com
+
 
 
 
